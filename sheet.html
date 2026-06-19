@@ -1,0 +1,900 @@
+<div class="sheet-wrapper">
+
+    <!-- ===================================================== -->
+    <!-- TAB NAVIGATION -->
+    <!-- ===================================================== -->
+
+    <input type="hidden" name="attr_sheet_tab" value="character">
+
+    <div class="sheet-tabs">
+        <button type="action" name="act_character_tab">Character</button>
+        <button type="action" name="act_ship_tab">Starship</button>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CHARACTER TAB -->
+    <!-- ===================================================== -->
+
+    <div class="sheet-character">
+
+        <!-- HEADER -->
+
+        <div class="sheet-header">
+
+            <div class="sheet-field">
+                <label>Character Name</label>
+                <input type="text" name="attr_character_name">
+            </div>
+
+            <div class="sheet-field">
+                <label>Class</label>
+                <input type="text" name="attr_class">
+            </div>
+
+            <div class="sheet-field">
+                <label>Species</label>
+                <input type="text" name="attr_race">
+            </div>
+
+            <div class="sheet-field">
+                <label>Background</label>
+                <input type="text" name="attr_background">
+            </div>
+
+            <div class="sheet-field">
+                <label>Level</label>
+                <input type="number" name="attr_level">
+            </div>
+
+            <div class="sheet-field">
+    <label>Proficiency Bonus</label>
+    <input type="number"
+           name="attr_proficiency_bonus"
+           readonly>
+</div>
+
+        </div>
+
+        <!-- ABILITY SCORES -->
+
+        <div class="sheet-abilities">
+
+            <div class="ability">
+                <label>STR</label>
+                <input type="number" name="attr_strength">
+                <input type="number" name="attr_strength_mod" readonly>
+            </div>
+
+            <div class="ability">
+                <label>DEX</label>
+                <input type="number" name="attr_dexterity">
+                <input type="number" name="attr_dexterity_mod" readonly>
+            </div>
+
+            <div class="ability">
+                <label>CON</label>
+                <input type="number" name="attr_constitution">
+                <input type="number" name="attr_constitution_mod" readonly>
+            </div>
+
+            <div class="ability">
+                <label>INT</label>
+                <input type="number" name="attr_intelligence">
+                <input type="number" name="attr_intelligence_mod" readonly>
+            </div>
+
+            <div class="ability">
+                <label>WIS</label>
+                <input type="number" name="attr_wisdom">
+                <input type="number" name="attr_wisdom_mod" readonly>
+            </div>
+
+            <div class="ability">
+                <label>CHA</label>
+                <input type="number" name="attr_charisma">
+                <input type="number" name="attr_charisma_mod" readonly>
+            </div>
+
+        </div>
+
+        <!-- COMBAT -->
+
+        <div class="sheet-combat">
+
+            <div class="sheet-field">
+                <label>Armor Class</label>
+                <input type="number" name="attr_ac">
+            </div>
+
+            <div class="sheet-field">
+                <label>Initiative</label>
+                <input type="number" name="attr_initiative">
+            </div>
+
+            <div class="sheet-field">
+                <label>Speed</label>
+                <input type="text" name="attr_speed">
+            </div>
+
+            <div class="sheet-field">
+                <label>Hit Points</label>
+                <input type="number" name="attr_hp_current">
+                /
+                <input type="number" name="attr_hp_max">
+            </div>
+
+        </div>
+
+        <!-- SKILLS -->
+
+        <div class="sheet-skills">
+
+            <h2>Skills</h2>
+
+            <div class="skill-grid">
+
+                <label><input type="checkbox" name="attr_acrobatics_prof"> Acrobatics</label>
+                <input type="number" name="attr_acrobatics">
+
+                <label><input type="checkbox" name="attr_arcana_prof"> Arcana</label>
+                <input type="number" name="attr_arcana">
+
+                <label><input type="checkbox" name="attr_athletics_prof"> Athletics</label>
+                <input type="number" name="attr_athletics">
+
+                <label><input type="checkbox" name="attr_history_prof"> History</label>
+                <input type="number" name="attr_history">
+
+                <label><input type="checkbox" name="attr_investigation_prof"> Investigation</label>
+                <input type="number" name="attr_investigation">
+
+                <label><input type="checkbox" name="attr_perception_prof"> Perception</label>
+                <input type="number" name="attr_perception">
+
+                <label><input type="checkbox" name="attr_persuasion_prof"> Persuasion</label>
+                <input type="number" name="attr_persuasion">
+
+                <label><input type="checkbox" name="attr_stealth_prof"> Stealth</label>
+                <input type="number" name="attr_stealth">
+
+            </div>
+
+        </div>
+
+        <!-- INVENTORY -->
+
+        <div class="sheet-inventory">
+
+            <h2>Inventory</h2>
+
+            <fieldset class="repeating_inventory">
+
+                <div class="inventory-row">
+
+                    <input type="text" name="attr_item_name" placeholder="Item">
+
+                    <input type="number" name="attr_item_qty" placeholder="Qty">
+
+                    <input type="text" name="attr_item_weight" placeholder="Weight">
+
+                    <textarea name="attr_item_notes"></textarea>
+
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <!-- SPELLS -->
+
+        <div class="sheet-spells">
+
+            <h2>Spells</h2>
+
+            <fieldset class="repeating_spells">
+
+                <div class="spell-card">
+
+                    <input type="text" name="attr_spell_name" placeholder="Spell Name">
+
+                    <input type="text" name="attr_spell_level" placeholder="Level">
+
+                    <input type="text" name="attr_spell_school" placeholder="School">
+
+                    <input type="text" name="attr_spell_range" placeholder="Range">
+
+                    <input type="text" name="attr_spell_duration" placeholder="Duration">
+
+                    <input type="text" name="attr_spell_casting_time" placeholder="Casting Time">
+
+                    <textarea name="attr_spell_description"></textarea>
+
+                    <button
+                        type="roll"
+                        name="roll_spell"
+                        value="&{template:default} {{name=@{spell_name}}} {{Description=@{spell_description}}}">
+                        Cast
+                    </button>
+
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- SHIP TAB -->
+    <!-- ===================================================== -->
+
+    <div class="sheet-ship">
+
+        <div class="ship-stats">
+
+            <div class="sheet-field">
+                <label>Ship Name</label>
+                <input type="text" name="attr_ship_name">
+            </div>
+
+            <div class="sheet-field">
+                <label>Hull Points</label>
+                <input type="number" name="attr_ship_hull">
+            </div>
+
+            <div class="sheet-field">
+                <label>Shield Points</label>
+                <input type="number" name="attr_ship_shields">
+            </div>
+
+            <div class="sheet-field">
+                <label>Armor Class</label>
+                <input type="number" name="attr_ship_ac">
+            </div>
+
+            <div class="sheet-field">
+                <label>Cargo Capacity</label>
+                <input type="number" name="attr_ship_cargo">
+            </div>
+
+        </div>
+
+        <!-- ================================================= -->
+        <!-- STATION TEMPLATE -->
+        <!-- ================================================= -->
+
+        <!-- COMMAND -->
+
+        <div class="station">
+
+            <h2>Command</h2>
+
+            <input type="number"
+                   name="attr_command_station_mod"
+                   <select name="attr_command_ability">
+
+    <option value="strength">STR</option>
+    <option value="dexterity">DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence">INT</option>
+    <option value="wisdom">WIS</option>
+    <option value="charisma" selected>CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_command_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_command_total_mod"
+       readonly>
+                   placeholder="Station Modifier">
+
+            <textarea
+                name="attr_command_notes"
+                placeholder="Notes"></textarea>
+
+<fieldset class="repeating_command">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_command_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Command}}
+            {{Modifier=@{command_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+                <div class="ship-action">
+
+                    <input type="text" name="attr_action_name" placeholder="Action">
+
+                    <input type="text" name="attr_action_range" placeholder="Range">
+
+                    <input type="text" name="attr_action_duration" placeholder="Duration">
+
+                    <textarea name="attr_action_description"></textarea>
+
+                    <button type="roll"
+                        name="roll_command_action"
+                        value="&{template:default} {{name=@{action_name}}} {{Modifier=@{command_station_mod}}} {{Description=@{action_description}}}">
+                        Execute
+                    </button>
+
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <!-- ENGINEERING -->
+
+        <div class="station">
+            <h2>Engineering</h2>
+
+            <input type="number" name="attr_engineering_station_mod">
+            <select name="attr_engineering_ability">
+
+    <option value="strength">STR</option>
+    <option value="dexterity">DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence" selected>INT</option>
+    <option value="wisdom">WIS</option>
+    <option value="charisma">CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_engineering_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_engineering_total_mod"
+       readonly>
+            <textarea name="attr_engineering_notes"></textarea>
+
+        <fieldset class="repeating_engineering">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_engineering_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Engineering}}
+            {{Modifier=@{engineering_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+        </div>
+
+        <!-- SABOTEUR -->
+
+        <div class="station">
+            <h2>Saboteur</h2>
+
+            <input type="number" name="attr_saboteur_station_mod">
+            <select name="attr_saboteur_ability">
+
+    <option value="strength">STR</option>
+    <option value="dexterity">DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence">INT</option>
+    <option value="wisdom">WIS</option>
+    <option value="charisma" selected>CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_saboteur_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_saboteur_total_mod"
+       readonly>
+            <textarea name="attr_saboteur_notes"></textarea>
+
+<fieldset class="repeating_saboteur">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_saboteur_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Saboteur}}
+            {{Modifier=@{saboteur_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+        </div>
+
+        <!-- FIGHTER PILOT -->
+
+        <div class="station">
+            <h2>Fighter Pilot</h2>
+
+            <input type="number" name="attr_pilot_station_mod">
+            <select name="attr_pilot_ability">
+
+    <option value="strength">STR</option>
+    <option value="dexterity" selected>DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence">INT</option>
+    <option value="wisdom">WIS</option>
+    <option value="charisma">CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_pilot_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_pilot_total_mod"
+       readonly>
+            <textarea name="attr_pilot_notes"></textarea>
+
+<fieldset class="repeating_pilot">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_pilot_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Fighter Pilot}}
+            {{Modifier=@{pilot_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+        </div>
+
+        <!-- WEAPONS -->
+
+        <div class="station">
+            <h2>Weapons</h2>
+
+            <input type="number" name="attr_weapons_station_mod">
+            <select name="attr_weapons_ability">
+
+    <option value="strength" selected>STR</option>
+    <option value="dexterity">DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence">INT</option>
+    <option value="wisdom">WIS</option>
+    <option value="charisma">CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_weapons_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_weapons_total_mod"
+       readonly>
+            <textarea name="attr_weapons_notes"></textarea>
+
+<fieldset class="repeating_weapons">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_weapons_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Weapons}}
+            {{Modifier=@{weapons_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+        </div>
+
+        <!-- TACTICAL -->
+
+        <div class="station">
+            <h2>Tactical</h2>
+
+            <input type="number" name="attr_tactical_station_mod">
+            <select name="attr_tactical_ability">
+
+    <option value="strength">STR</option>
+    <option value="dexterity">DEX</option>
+    <option value="constitution">CON</option>
+    <option value="intelligence">INT</option>
+    <option value="wisdom" selected>WIS</option>
+    <option value="charisma">CHA</option>
+
+</select>
+
+<label>
+    <input type="checkbox"
+           name="attr_tactical_prof">
+    Proficient
+</label>
+
+<input type="number"
+       name="attr_tactical_total_mod"
+       readonly>
+            <textarea name="attr_tactical_notes"></textarea>
+
+<fieldset class="repeating_tactical">
+
+    <div class="ship-action">
+
+        <input type="text"
+               name="attr_action_name"
+               placeholder="Action Name">
+
+        <input type="text"
+               name="attr_action_type"
+               placeholder="Action Type">
+
+        <input type="text"
+               name="attr_action_range"
+               placeholder="Range">
+
+        <input type="text"
+               name="attr_action_cost"
+               placeholder="Energy Cost">
+
+        <input type="text"
+               name="attr_action_cooldown"
+               placeholder="Cooldown">
+
+        <textarea
+            name="attr_action_description"
+            placeholder="Description"></textarea>
+
+        <button
+            type="roll"
+            name="roll_tactical_action"
+            value="&{template:default}
+            {{name=@{action_name}}}
+            {{Station=Tactical}}
+            {{Modifier=@{tactical_total_mod}}}
+            {{Description=@{action_description}}}">
+            Execute
+        </button>
+
+    </div>
+
+</fieldset>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- SHEET WORKERS -->
+<!-- ===================================================== -->
+
+<script type="text/worker">
+
+on("clicked:character_tab", function() {
+    setAttrs({
+        sheet_tab: "character"
+    });
+});
+
+on("clicked:ship_tab", function() {
+    setAttrs({
+        sheet_tab: "ship"
+    });
+});
+
+</script><script type="text/worker">
+
+/* ======================================================
+   ABILITY MODIFIERS
+====================================================== */
+
+const abilities = [
+    "strength",
+    "dexterity",
+    "constitution",
+    "intelligence",
+    "wisdom",
+    "charisma"
+];
+
+abilities.forEach(function(stat){
+
+    on(`change:${stat}`, function(){
+
+        getAttrs([stat], function(values){
+
+            let score =
+                parseInt(values[stat]) || 10;
+
+            let mod =
+                Math.floor((score - 10) / 2);
+
+            let update = {};
+
+            update[`${stat}_mod`] = mod;
+
+            setAttrs(update);
+
+        });
+
+    });
+
+});
+
+/* ======================================================
+   PROFICIENCY BONUS
+====================================================== */
+
+on("change:level sheet:opened", function(){
+
+    getAttrs(["level"], function(v){
+
+        let level =
+            parseInt(v.level) || 1;
+
+        let prof = 2;
+
+        if(level >= 5) prof = 3;
+        if(level >= 9) prof = 4;
+        if(level >= 13) prof = 5;
+        if(level >= 17) prof = 6;
+
+        setAttrs({
+            proficiency_bonus: prof
+        });
+
+    });
+
+});
+
+/* ======================================================
+   STATION AUTOMATION
+====================================================== */
+
+const stations = [
+    "command",
+    "engineering",
+    "saboteur",
+    "pilot",
+    "weapons",
+    "tactical"
+];
+
+stations.forEach(function(station){
+
+    on(
+        `change:${station}_ability
+         change:${station}_station_mod
+         change:${station}_prof
+         change:proficiency_bonus
+         change:strength_mod
+         change:dexterity_mod
+         change:constitution_mod
+         change:intelligence_mod
+         change:wisdom_mod
+         change:charisma_mod`,
+    function(){
+
+        getAttrs([
+            `${station}_ability`,
+            `${station}_station_mod`,
+            `${station}_prof`,
+            "proficiency_bonus",
+
+            "strength_mod",
+            "dexterity_mod",
+            "constitution_mod",
+            "intelligence_mod",
+            "wisdom_mod",
+            "charisma_mod"
+
+        ], function(v){
+
+            let ability =
+                v[`${station}_ability`];
+
+            let stationMod =
+                parseInt(
+                    v[`${station}_station_mod`]
+                ) || 0;
+
+            let prof =
+                parseInt(
+                    v.proficiency_bonus
+                ) || 0;
+
+            let proficient =
+                v[`${station}_prof`] === "on";
+
+            let abilityMod =
+                parseInt(
+                    v[`${ability}_mod`]
+                ) || 0;
+
+            let total =
+                stationMod +
+                abilityMod +
+                (proficient ? prof : 0);
+
+            let update = {};
+
+            update[
+                `${station}_total_mod`
+            ] = total;
+
+            setAttrs(update);
+
+        });
+
+    });
+
+});
+
+</script>

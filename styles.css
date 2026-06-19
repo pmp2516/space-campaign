@@ -1,0 +1,357 @@
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+.sheet-wrapper {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    color: #222;
+    background: #f2efe8;
+}
+
+.sheet-wrapper h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 4px;
+}
+
+/* ==========================================================
+   TAB BUTTONS
+========================================================== */
+
+.sheet-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sheet-tabs button {
+    flex: 1;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid #444;
+    background: #d9d4ca;
+    cursor: pointer;
+}
+
+.sheet-tabs button:hover {
+    background: #c6c0b4;
+}
+
+/* ==========================================================
+   TAB VISIBILITY
+========================================================== */
+
+.sheet-character,
+.sheet-ship {
+    display: block;
+}
+
+input[name="attr_sheet_tab"][value="character"] ~ .sheet-character {
+    display: block;
+}
+
+input[name="attr_sheet_tab"][value="ship"] ~ .sheet-ship {
+    display: block;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.sheet-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sheet-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.sheet-field label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.sheet-field input,
+.sheet-field textarea,
+.sheet-field select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   ABILITY SCORES
+========================================================== */
+
+.sheet-abilities {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ability {
+    background: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    text-align: center;
+    padding: 8px;
+}
+
+.ability label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.ability input {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* ==========================================================
+   COMBAT
+========================================================== */
+
+.sheet-combat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================
+   SKILLS
+========================================================== */
+
+.sheet-skills {
+    background: white;
+    border: 1px solid #777;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 2fr 80px;
+    gap: 6px;
+    align-items: center;
+}
+
+/* ==========================================================
+   INVENTORY
+========================================================== */
+
+.sheet-inventory {
+    margin-bottom: 15px;
+}
+
+.inventory-row {
+    display: grid;
+    grid-template-columns: 2fr 80px 80px 3fr;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================
+   SPELLS
+========================================================== */
+
+.sheet-spells {
+    margin-bottom: 20px;
+}
+
+.spell-card {
+    border: 1px solid #666;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    display: grid;
+    gap: 6px;
+}
+
+.spell-card textarea {
+    min-height: 80px;
+}
+
+.spell-card button {
+    justify-self: start;
+}
+
+/* ==========================================================
+   STARSHIP TAB
+========================================================== */
+
+.sheet-ship {
+
+    background:
+        linear-gradient(
+            rgba(8,12,24,.95),
+            rgba(8,12,24,.95)
+        );
+
+    color: #e8eefc;
+
+    border: 2px solid #3c5a99;
+    padding: 12px;
+}
+
+/* ==========================================================
+   SHIP STATS
+========================================================== */
+
+.ship-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px,1fr));
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.sheet-ship .sheet-field {
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid #4f6fb3;
+
+    padding: 6px;
+}
+
+.sheet-ship input,
+.sheet-ship textarea,
+.sheet-ship select {
+
+    background: #111827;
+    color: white;
+    border: 1px solid #4f6fb3;
+}
+
+/* ==========================================================
+   STATIONS
+========================================================== */
+
+.station {
+
+    background: rgba(255,255,255,.04);
+
+    border: 2px solid #4f6fb3;
+
+    border-radius: 6px;
+
+    padding: 10px;
+
+    margin-bottom: 15px;
+}
+
+.station h2 {
+
+    color: #9cc8ff;
+
+    border-bottom: 1px solid #4f6fb3;
+}
+
+/* ==========================================================
+   SHIP ACTIONS
+========================================================== */
+
+.ship-action {
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid #4f6fb3;
+
+    padding: 8px;
+
+    margin-bottom: 8px;
+
+    display: grid;
+
+    gap: 5px;
+}
+
+.ship-action textarea {
+    min-height: 70px;
+}
+
+/* ==========================================================
+   REPEATING SECTIONS
+========================================================== */
+
+.repcontrol {
+    margin-top: 8px;
+}
+
+.repcontrol_add,
+.repcontrol_edit {
+
+    background: #4f6fb3;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button[type="roll"] {
+
+    background: #7a1f1f;
+    color: white;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    font-weight: bold;
+}
+
+button[type="roll"]:hover {
+
+    background: #962828;
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media screen and (max-width: 900px) {
+
+    .sheet-abilities {
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .inventory-row {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .sheet-abilities {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .sheet-tabs {
+
+        flex-direction: column;
+    }
+}
